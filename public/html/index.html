@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Катрин</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#800020',
+                        secondary: '#FFF5F5'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-poppins">
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="#" class="text-3xl font-['Pacifico'] text-primary">Katrin</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary">Главная</a>
+                <a href="#about" class="text-gray-700 hover:text-primary">О нас</a>
+                <a href="#gallery" class="text-gray-700 hover:text-primary">Галерея</a>
+                <a href="#services" class="text-gray-700 hover:text-primary">Услуги</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary">Контакты</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary">
+                    <i class="ri-instagram-line"></i>
+                </a>
+                <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary">
+                    <i class="ri-facebook-line"></i>
+                </a>
+                <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary">
+                    <i class="ri-pinterest-line"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="home" class="relative min-h-screen flex items-center"
+        style="background-image: url('https://public.readdy.ai/ai/img_res/04912d24988877ceaabfb73c79c367c9.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 py-32">
+            <div class="max-w-2xl">
+                <h1 class="text-6xl font-playfair font-bold text-white mb-6">Ваша Идеальная Свадьба Начинается Здесь</h1>
+                <p class="text-xl text-white/90 mb-8">Ощутите роскошь и элегантность в нашем свадебном салоне. Где
+                    мечты становятся реальностью.</p>
+                <button
+                    class="bg-white text-primary px-8 py-4 !rounded-button font-semibold hover:bg-primary hover:text-white transition-all cursor-pointer">Записаться на примерку</button>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative h-[600px] rounded-lg overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/054a63c34db8a812adecabd12837183b.jpg"
+                        class="absolute inset-0 w-full h-full object-cover" alt="Salon Interior">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-6">Наследие любви и элегантности</h2>
+                    <p class="text-gray-600 mb-6">С 2010 года мы создаем незабываемые свадебные впечатления для
+                        невест, которые ищут совершенства. Наша тщательно подобранная коллекция включает эксклюзивные модели от
+                        всемирно известных дизайнеров, гарантируя, что каждая невеста найдет платье своей мечты.</p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="p-6 bg-secondary rounded-lg">
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-2">15+</h3>
+                            <p class="text-gray-600">Лет Опыта</p>
+                        </div>
+                        <div class="p-6 bg-secondary rounded-lg">
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-2">5000+</h3>
+                            <p class="text-gray-600">Счастливых Невест</p>
+                        </div>
+                        <div class="p-6 bg-secondary rounded-lg">
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-2">300+</h3>
+                            <p class="text-gray-600">Уникальных Дизайнов</p>
+                        </div>
+                        <div class="p-6 bg-secondary rounded-lg">
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-2">100%</h3>
+                            <p class="text-gray-600">Удовлетворения</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery" class="py-24 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-playfair font-bold text-center text-gray-900 mb-12">Наша галерея</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group relative h-[400px] rounded-lg overflow-hidden cursor-pointer"
+                    onclick="openModal('Wedding Dresses', 0)">
+                    <img src="https://public.readdy.ai/ai/img_res/7d9b82151715c1916de743be0829955a.jpg"
+                        class="absolute inset-0 w-full h-full object-cover" alt="Salon Interior">
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-all"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform">
+                        <h3 class="text-xl font-playfair font-bold mb-2">Свадебные платья</h3>
+                        <p class="text-sm">Откройте для себя роскошный выбор</p>
+                    </div>
+                </div>
+                <div class="group relative h-[400px] rounded-lg overflow-hidden cursor-pointer"
+                    onclick="openModal('Evening Dresses', 0)">
+                    <img src="https://public.readdy.ai/ai/img_res/d051af50b0e8d83b578698a6ba092b45.jpg"
+                        class="absolute inset-0 w-full h-full object-cover" alt="Wedding Dresses">
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-all"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform">
+                        <h3 class="text-xl font-playfair font-bold mb-2">Вечерние платья</h3>
+                        <p class="text-sm">Найдите себе идеальное платье</p>
+                    </div>
+                </div>
+                <div class="group relative h-[400px] rounded-lg overflow-hidden cursor-pointer"
+                    onclick="openModal('Decorations', 0)">
+                    <img src="https://public.readdy.ai/ai/img_res/e897628c552a50901d8dacbb8637d25a.jpg"
+                        class="absolute inset-0 w-full h-full object-cover" alt="Decorations">
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-all"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform">
+                        <h3 class="text-xl font-playfair font-bold mb-2">Декорации</h3>
+                        <p class="text-sm">Сделайте Ваш день идеальным</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div id="galleryModal" class="fixed inset-0 bg-black/80 z-50 hidden">
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+                <div class="relative bg-white rounded-lg max-w-4xl w-full">
+                    <button onclick="closeModal()"
+                        class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                    <div class="relative h-[70vh]">
+                        <img id="modalImage" class="absolute inset-0 w-full h-full object-contain" src="" alt="">
+                        <button onclick="navigate(-1)"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center text-gray-700 hover:bg-white">
+                            <i class="ri-arrow-left-s-line text-2xl"></i>
+                        </button>
+                        <button onclick="navigate(1)"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center text-gray-700 hover:bg-white">
+                            <i class="ri-arrow-right-s-line text-2xl"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 bg-white rounded-b-lg">
+                        <h3 id="modalTitle" class="text-2xl font-playfair font-bold text-gray-900 mb-2"></h3>
+                        <p id="modalDescription" class="text-gray-600"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const galleryItems11 = {
+            "Wedding Dresses": [
+                {
+                    title: "Новая коллекция свадебных платьев: утонченность в каждой детали",
+                    description: "Ознакомьтесь с самыми изысканными моделями сезона – элегантные силуэты, трендовые ткани и безупречный крой.",
+                    image: "https://public.readdy.ai/ai/img_res/7d9b82151715c1916de743be0829955a.jpg"
+                },
+                {
+                    title: "Эксклюзивная коллекция свадебных платьев: вдохновение мечтой",
+                    description: "Представляем уникальную подборку нарядов, созданных для особенного дня – стиль, роскошь и безупречное исполнение.",
+                    image: "https://public.readdy.ai/ai/img_res/a9bea5739ccf773e25b65fdf675124a5.jpg"
+                },
+                {
+                    title: "Лучшая свадебная коллекция года: тренд, который покорил невест",
+                    description: "Обзор самых ярких и стильных коллекций свадебных платьев от ведущих дизайнеров.",
+                    image: "https://public.readdy.ai/ai/img_res/4e9e1463a44df30661e5733f7bb28d93.jpg"
+                }
+            ],
+            "Evening Dresses": [
+                {
+                    title: "Новая коллекция вечерних платьев: элегантность в каждом образе",
+                    description: "Познакомьтесь с роскошными моделями этого сезона – утонченные силуэты, трендовые ткани и изысканный дизайн.",
+                    image: "https://public.readdy.ai/ai/img_res/d051af50b0e8d83b578698a6ba092b45.jpg"
+                },
+                {
+                    title: "Эксклюзивные вечерние платья: сияйте на любом мероприятии",
+                    description: "Представляем коллекцию нарядов, созданных для особых случаев – стиль, грация и безупречный крой.",
+                    image: "https://public.readdy.ai/ai/img_res/a9ac72d0904d7826df98424d456338f1.jpg"
+                },
+                {
+                    title: "Лучшие коллекции вечерних платьев: тенденции, которые покорили подиумы",
+                    description: "Обзор самых эффектных и модных вечерних платьев от ведущих дизайнеров.",
+                    image: "https://public.readdy.ai/ai/img_res/bf3eea026651d287ea031814973d6391.jpg"
+                }
+            ],
+            "Decorations": [
+                {
+                    title: "Тренды свадебного декора: стильные идеи для незабываемой атмосферы",
+                    description: "Разбираем самые популярные решения в оформлении свадьбы – от минимализма до роскошных цветочных инсталляций.",
+                    image: "https://public.readdy.ai/ai/img_res/6c0b2a2962828c1908c7fff77459a479.jpg"
+                },
+                {
+                    title: "Идеальные свадебные декорации: как создать волшебную обстановку?",
+                    description: "Советы по выбору декора для церемонии и банкета: цветовые решения, текстуры и стильные детали.",
+                    image: "https://public.readdy.ai/ai/img_res/e897628c552a50901d8dacbb8637d25a.jpg"
+                },
+                {
+                    title: "Новая коллекция свадебного декора: эксклюзивные идеи для вашего дня",
+                    description: "Представляем вдохновляющие концепции оформления свадьбы – от элегантной классики до современных трендов.",
+                    image: "https://public.readdy.ai/ai/img_res/1ce0325aea8b3f2a477a2f4469611ceb.jpg"
+                }
+            ]
+        };
+        let currentCategory = '';
+        let currentIndex = 0;
+        const modal = document.getElementById('galleryModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+
+        let galleryItems = <%- JSON.stringify(gallery) %>;
+
+        function openModal(category, index) {
+            currentCategory = category;
+            currentIndex = index;
+            updateModal();
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function navigate(direction) {
+            const items = galleryItems.filter((item => item.category === currentCategory));
+            currentIndex = (currentIndex + direction + items.length) % items.length;
+            updateModal();
+        }
+
+        function updateModal() {
+            const items = galleryItems.filter((item => item.category === currentCategory));
+            const item = items[currentIndex];
+            modalImage.src = "/static/" + item.image;
+            modalTitle.textContent = item.caption;
+            modalDescription.textContent = item.caption;
+        }
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'ArrowLeft') {
+                navigate(-1);
+            } else if (e.key === 'ArrowRight') {
+                navigate(1);
+            }
+        });
+    </script>
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-playfair font-bold text-center text-gray-900 mb-12">Наши услуги</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-secondary rounded-lg">
+                    <div class="w-12 h-12 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="ri-heart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-gray-900 mb-4">Примерка по записи</h3>
+                    <p class="text-gray-600 mb-6">Вы сможете примерить любые понравившиеся Вам платья без спешки и суеты. </p>
+                    <p class="text-primary font-semibold mb-4">Вы обязательно найдете платье по вкусу</p>
+                    <!-- <button
+                        class="text-primary border border-primary px-6 py-2 !rounded-button hover:bg-primary hover:text-white transition-all cursor-pointer">Learn
+                        More</button> -->
+                </div>
+                <div class="p-8 bg-secondary rounded-lg">
+                    <div class="w-12 h-12 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="ri-scissors-line"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-gray-900 mb-4">Пошив платья</h3>
+                    <p class="text-gray-600 mb-6">Профессиональный портной сможет пошить платье идеально под Вашу фигуру и рост.</p>
+                    <p class="text-primary font-semibold mb-4">Платье будет на Вас идеальным</p>
+                    <!-- <button
+                        class="text-primary border border-primary px-6 py-2 !rounded-button hover:bg-primary hover:text-white transition-all cursor-pointer">Learn
+                        More</button> -->
+                </div>
+                <div class="p-8 bg-secondary rounded-lg">
+                    <div class="w-12 h-12 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="ri-percent-line"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-gray-900 mb-4">Рассрочка без %</h3>
+                    <p class="text-gray-600 mb-6">Выгодные условия для оформления рассрочки на любое платье, без процентов и переплат.</p>
+                    <p class="text-primary font-semibold mb-4">Идеальная возможность купить платье</p>
+                    <!-- <button
+                        class="text-primary border border-primary px-6 py-2 !rounded-button hover:bg-primary hover:text-white transition-all cursor-pointer">Learn
+                        More</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-24 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-playfair font-bold text-center text-gray-900 mb-12">Контакты</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Имя</label>
+                            <input type="text" class="w-full px-4 py-2 border-none bg-white rounded" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Номер телефона</label>
+                            <input type="tel" class="w-full px-4 py-2 border-none bg-white rounded" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Ваши пожелания</label>
+                            <textarea class="w-full px-4 py-2 border-none bg-white rounded h-32"></textarea>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 transition-all cursor-pointer">Записаться</button>
+                    </form>
+                </div>
+                <div>
+                    <div class="mb-8">
+                        <div class="bg-white p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary">
+                                    <i class="ri-map-pin-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Адрес</h3>
+                                    <p class="text-gray-600">​ТЦ Роман, ​Проспект Ленина, 95, Томск</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary">
+                                    <i class="ri-phone-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Телефон</h3>
+                                    <p class="text-gray-600">+7(3822)51-08-90</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary">
+                                    <i class="ri-mail-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Почта</h3>
+                                    <p class="text-gray-600">katrin@yandex.ru</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[300px] rounded-lg overflow-hidden">
+                        <!-- <img src="map2gis.png"
+                            class="w-full h-full object-cover" alt="Location Map"> -->
+                            <div style="position:relative;overflow:hidden;" class="w-full h-full object-cover">
+                                <a href="https://yandex.ru/maps/org/katrin/1079021179/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Катрин</a>
+                                <a href="https://yandex.ru/maps/67/tomsk/category/bridal_salon/184108335/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Свадебный салон в Томске</a>
+                                <a href="https://yandex.ru/maps/67/tomsk/category/clothing_store/184107943/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Магазин одежды в Томске</a>
+                                <iframe src="https://yandex.ru/map-widget/v1/?ll=84.949607%2C56.481385&mode=search&oid=1079021179&ol=biz&z=17.05" width="100%" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 block">Katrin</a>
+                    <p class="text-white/80">Исполняем мечты с 2010</p>
+                </div>
+                <div>
+                    <h4 class="font-playfair font-bold mb-4">Ссылки</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-white/80 hover:text-white">Главная</a></li>
+                        <li><a href="#about" class="text-white/80 hover:text-white">О нас</a></li>
+                        <li><a href="#gallery" class="text-white/80 hover:text-white">Галерея</a></li>
+                        <li><a href="#services" class="text-white/80 hover:text-white">Услуги</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-playfair font-bold mb-4">Время работы</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li>Понедельник - Суббота: 10:00 - 19:00</li>
+                        <li>Воскресенье: 11:00 - 18:00</li>
+                    </ul>
+                </div>
+                <!-- <div>
+                    <h4 class="font-playfair font-bold mb-4">Newsletter</h4>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Your email"
+                            class="w-full px-4 py-2 bg-white/10 border-none rounded text-white placeholder-white/60">
+                        <button
+                            class="bg-white text-primary px-6 py-2 !rounded-button hover:bg-white/90 transition-all cursor-pointer">Subscribe</button>
+                    </form>
+                </div> -->
+            </div>
+            <div class="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/80">© 2025 Katrin. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-white/80 hover:text-white">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="#" class="text-white/80 hover:text-white">
+                        <i class="ri-facebook-line"></i>
+                    </a>
+                    <a href="#" class="text-white/80 hover:text-white">
+                        <i class="ri-pinterest-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                console.log('Form submitted:', data);
+                const notification = document.createElement('div');
+                notification.className = 'fixed bottom-4 right-4 bg-primary text-white px-6 py-3 rounded shadow-lg';
+                notification.textContent = 'Вы были записаны!';
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+                form.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>

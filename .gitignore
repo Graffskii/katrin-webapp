@@ -1,0 +1,7 @@
+static/
+tests/static/
+.env
+db.sqlite
+test_db.sqlite
+node_modules/
+tests/nothing.js

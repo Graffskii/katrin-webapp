@@ -1,0 +1,46 @@
+/* === preview.ejs === */
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Катрин</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body class="font-poppins">
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary">Главная</a>
+                <a href="#about" class="text-gray-700 hover:text-primary">О нас</a>
+                <a href="#gallery" class="text-gray-700 hover:text-primary">Галерея</a>
+                <a href="#services" class="text-gray-700 hover:text-primary">Услуги</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary">Контакты</a>
+            </nav>
+        </div>
+    </header>
+    <section id="gallery" class="py-24 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-playfair font-bold text-center text-gray-900 mb-12">Наша галерея</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <% gallery.forEach(item => { %>
+                    <div class="group relative h-[400px] rounded-lg overflow-hidden">
+                        <img src="/static/<%= item.filename %>" class="absolute inset-0 w-full h-full object-cover" alt="<%= item.caption %>">
+                        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-all"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform">
+                            <h3 class="text-xl font-playfair font-bold mb-2"><%= item.caption %></h3>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>© 2025 Katrin. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+/* === admin.ejs === */
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body class="font-poppins">
+    <div class="max-w-5xl mx-auto p-8">
+        <h1 class="text-3xl font-playfair font-bold text-center">Админ-панель</h1>
+
+        <!-- Форма для создания нового модератора, отображается только для админа -->
+        <% if (user && user.role === 'admin') { %>
+            <h2 class="text-2xl font-playfair font-bold mt-8">Создать нового модератора</h2>
+            <form action="/create-moderator" method="POST" class="mt-6 space-y-4">
+                <label class="block">Имя пользователя:</label>
+                <input type="text" name="username" class="border p-2 w-full" required>
+                <label class="block">Пароль:</label>
+                <input type="password" name="password" class="border p-2 w-full" required>
+                <button class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-all">Создать модератора</button>
+            </form>
+        <% } %>
+        <!-- Кнопка для выхода -->
+        <form action="/logout" method="GET" class="mt-6">
+            <button class="bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600 transition-all">Выйти</button>
+        </form>
+
+        <h2 class="text-2xl font-playfair font-bold mt-8">Загрузить фотографию</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="mt-6 space-y-4">
+            <label class="block">Выберите категорию:</label>
+            <select name="category" class="border p-2 w-full">
+                <option value="Wedding Dresses">Свадебные платья</option>
+                <option value="Evening Dresses">Вечерние платья</option>
+                <option value="Decorations">Декорации</option>
+            </select>
+            <label class="block">Загрузите изображение:</label>
+            <input type="file" name="image" class="border p-2 w-full">
+            <label class="block">Описание:</label>
+            <input type="text" name="caption" class="border p-2 w-full">
+            <button class="bg-gray-500 text-white px-6 py-2 rounded cursor-not-allowed">Добавить</button>
+        </form>
+        
+        <h2 class="text-2xl font-playfair font-bold mt-8">Галереи</h2>
+        <h3 class="text-xl font-bold mt-4">Свадебные платья</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+            <% gallery.filter(item => item.category === "Wedding Dresses").forEach(item => { %>
+                <div class="relative border p-4 rounded">
+                    <img src="/static/<%= item.filename %>" class="w-full rounded">
+                    <p class="text-center mt-2"><%= item.caption %></p>
+                </div>
+            <% }) %>
+        </div>
+
+        <h3 class="text-xl font-bold mt-4">Вечерние платья</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+            <% gallery.filter(item => item.category === "Evening Dresses").forEach(item => { %>
+                <div class="relative border p-4 rounded">
+                    <img src="/static/<%= item.filename %>" class="w-full rounded">
+                    <p class="text-center mt-2"><%= item.caption %></p>
+                </div>
+            <% }) %>
+        </div>
+
+        <h3 class="text-xl font-bold mt-4">Декорации</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+            <% gallery.filter(item => item.category === "Decorations").forEach(item => { %>
+                <div class="relative border p-4 rounded">
+                    <img src="/static/<%= item.filename %>" class="w-full rounded">
+                    <p class="text-center mt-2"><%= item.caption %></p>
+                </div>
+            <% }) %>
+        </div>
+        
+        <h2 class="text-2xl font-playfair font-bold mt-8">Редактирование фотографий</h2>
+        <table class="w-full border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="border border-gray-300 p-2">Фото</th>
+                    <th class="border border-gray-300 p-2">Описание</th>
+                    <th class="border border-gray-300 p-2">Категория</th>
+                    <th class="border border-gray-300 p-2">Статус</th>
+                    <th class="border border-gray-300 p-2">Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% gallery.forEach(item => { %>
+                    <tr>
+                        <td class="border border-gray-300 p-2 text-center">
+                            <img src="/static/<%= item.filename %>" class="w-16 h-16 object-cover rounded">
+                        </td>
+                        <td class="border border-gray-300 p-2">
+                            <form action="/edit" method="POST">
+                                <input type="hidden" name="id" value="<%= item.id %>">
+                                <input type="text" name="caption" value="<%= item.caption %>" class="border p-1 w-full">
+                        </td>
+                        <td class="border border-gray-300 p-2">
+                                <select name="category" class="border p-1 w-full">
+                                    <option value="Wedding Dresses" <%= item.category === "Wedding Dresses" ? "selected" : "" %>>Свадебные платья</option>
+                                    <option value="Evening Dresses" <%= item.category === "Evening Dresses" ? "selected" : "" %>>Вечерние платья</option>
+                                    <option value="Decorations" <%= item.category === "Decorations" ? "selected" : "" %>>Декорации</option>
+                                </select>
+                        </td>
+                        <td class="border border-gray-300 p-2 text-center">
+                            <%= item.draft ? "Черновик" : "Опубликовано" %>
+                        </td>
+                        <td class="border border-gray-300 p-2 text-center">
+                            <button class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition-all">Сохранить</button>
+                            </form>
+                            <form action="/set-draft" method="POST" class="inline-block">
+                                <input type="hidden" name="id" value="<%= item.id %>">
+                                <button class="bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600 transition-all">В черновик</button>
+                            </form>
+                            <form action="/delete" method="POST" class="inline-block">
+                                <input type="hidden" name="id" value="<%= item.id %>">
+                                <button class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 transition-all">Удалить</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        
+        <form action="/publish" method="POST" class="mt-6">
+            <button class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition-all">Опубликовать</button>
+        </form>
+    </div>
+</body>
+</html>
