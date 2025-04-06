@@ -14,7 +14,7 @@ const upload = require("./upload");
 const router = express.Router();
 
 // Отображение админ-панели
-router.get("/admin", authMiddleware, async (req, res) => {
+router.get("/", authMiddleware, async (req, res) => {
     const gallery = await getAllGallery(true); // Показываем черновики и опубликованные фото
     const user = await getAdmin(req.cookies.user)
     res.render("admin", { gallery, user });

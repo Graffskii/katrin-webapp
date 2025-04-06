@@ -70,7 +70,8 @@ app.post("/contact", (req, res) => {
     console.log(msg)
     msg = encodeURI(msg)
 
-    http.post(`https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage?chat_id=${process.env.TELEGRAM_CHATID}&parse_mode=html&text=${msg}`, function (error, response, body) {  
+    http.post(`https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage?chat_id=${process.env.TELEGRAM_CHATID}&parse_mode=html&text=${msg}`,
+    function (error, response, body) {  
         console.log('error:', error); 
         console.log('statusCode:', response && response.statusCode); 
         console.log('body:', body); 
@@ -84,7 +85,7 @@ app.post("/contact", (req, res) => {
 });
 
 // Админка
-app.use(require("./routes"));
+app.use("/admin", require("./routes"));
 
 if (process.env.NODE_ENV !== 'test') {
     app.listen(3000, () => {

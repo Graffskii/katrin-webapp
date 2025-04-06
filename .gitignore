@@ -5,3 +5,4 @@ db.sqlite
 test_db.sqlite
 node_modules/
 tests/nothing.js
+draft.txt

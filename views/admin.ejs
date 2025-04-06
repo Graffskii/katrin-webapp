@@ -15,7 +15,7 @@
         <!-- Форма для создания нового модератора, отображается только для админа -->
         <% if (user && user.role === 'admin') { %>
             <h2 class="text-2xl font-playfair font-bold mt-8">Создать нового модератора</h2>
-            <form action="/create-moderator" method="POST" class="mt-6 space-y-4">
+            <form action="/admin/create-moderator" method="POST" class="mt-6 space-y-4">
                 <label class="block">Имя пользователя:</label>
                 <input type="text" name="username" class="border p-2 w-full" required>
                 <label class="block">Пароль:</label>
@@ -29,7 +29,7 @@
         </form>
 
         <h2 class="text-2xl font-playfair font-bold mt-8">Загрузить фотографию</h2>
-        <form action="/upload" method="POST" enctype="multipart/form-data" class="mt-6 space-y-4">
+        <form action="/admin/upload" method="POST" enctype="multipart/form-data" class="mt-6 space-y-4">
             <label class="block">Выберите категорию:</label>
             <select name="category" class="border p-2 w-full">
                 <option value="Wedding Dresses">Свадебные платья</option>
@@ -92,7 +92,7 @@
                             <img src="/static/<%= item.filename %>" class="w-16 h-16 object-cover rounded">
                         </td>
                         <td class="border border-gray-300 p-2">
-                            <form action="/edit" method="POST">
+                            <form action="/admin/edit" method="POST">
                                 <input type="hidden" name="id" value="<%= item.id %>">
                                 <input type="text" name="caption" value="<%= item.caption %>" class="border p-1 w-full">
                         </td>
@@ -109,11 +109,11 @@
                         <td class="border border-gray-300 p-2 text-center">
                             <button class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition-all">Сохранить</button>
                             </form>
-                            <form action="/set-draft" method="POST" class="inline-block">
+                            <form action="/admin/set-draft" method="POST" class="inline-block">
                                 <input type="hidden" name="id" value="<%= item.id %>">
                                 <button class="bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600 transition-all">В черновик</button>
                             </form>
-                            <form action="/delete" method="POST" class="inline-block">
+                            <form action="/admin/delete" method="POST" class="inline-block">
                                 <input type="hidden" name="id" value="<%= item.id %>">
                                 <button class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 transition-all">Удалить</button>
                             </form>
@@ -123,7 +123,7 @@
             </tbody>
         </table>
         
-        <form action="/publish" method="POST" class="mt-6">
+        <form action="/admin/publish" method="POST" class="mt-6">
             <button class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition-all">Опубликовать</button>
         </form>
     </div>
